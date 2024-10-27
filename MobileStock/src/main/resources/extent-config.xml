@@ -1,0 +1,10 @@
+<extentreports>
+    <configuration>
+        <reportName>Extent Report</reportName>
+        <reportHeadline>Test Execution Report</reportHeadline>
+        <documentTitle>Extent Report</documentTitle>
+        <chartVisibilityOnOpen>true</chartVisibilityOnOpen>
+        <theme>standard</theme>
+        <encoding>UTF-8</encoding>
+    </configuration>
+</extentreports>

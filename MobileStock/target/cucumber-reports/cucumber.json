@@ -1,0 +1,601 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-10-27T17:48:53.589Z",
+        "line": 3,
+        "name": "Creating with a Future Year",
+        "description": "",
+        "id": "edge-cases-testing;creating-with-a-future-year",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 526357900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I set POST API endpoint",
+            "match": {
+              "location": "AddNewMobile.setPostApiEndpoint()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1830553300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2030, \"price\": 1849.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Apple MacBook Pro 16\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"year\"",
+                  "offset": 64
+                },
+                {
+                  "val": "2030",
+                  "offset": 72
+                },
+                {
+                  "val": "\"price\"",
+                  "offset": 78
+                },
+                {
+                  "val": "1849.99",
+                  "offset": 87
+                },
+                {
+                  "val": "\"CPU model\"",
+                  "offset": 96
+                },
+                {
+                  "val": "\"Intel Core i9\"",
+                  "offset": 109
+                },
+                {
+                  "val": "\"Hard disk size\"",
+                  "offset": 126
+                },
+                {
+                  "val": "\"1 TB\"",
+                  "offset": 144
+                }
+              ],
+              "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 16688600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I receive valid HTTP response code 200 or an appropriate status code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 35
+                }
+              ],
+              "location": "AddNewMobile.receiveValidHttpResponseCodeOrAppropriateStatusCode(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-10-27T17:48:55.993Z",
+        "line": 8,
+        "name": "Boundary Price Value",
+        "description": "",
+        "id": "edge-cases-testing;boundary-price-value",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 687300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I set POST API endpoint",
+            "match": {
+              "location": "AddNewMobile.setPostApiEndpoint()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 391160700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2024, \"price\": 9999.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Apple MacBook Pro 16\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"year\"",
+                  "offset": 64
+                },
+                {
+                  "val": "2024",
+                  "offset": 72
+                },
+                {
+                  "val": "\"price\"",
+                  "offset": 78
+                },
+                {
+                  "val": "9999.99",
+                  "offset": 87
+                },
+                {
+                  "val": "\"CPU model\"",
+                  "offset": 96
+                },
+                {
+                  "val": "\"Intel Core i9\"",
+                  "offset": 109
+                },
+                {
+                  "val": "\"Hard disk size\"",
+                  "offset": 126
+                },
+                {
+                  "val": "\"1 TB\"",
+                  "offset": 144
+                }
+              ],
+              "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3804800,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I receive valid HTTP response code 200 or an appropriate status code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 35
+                }
+              ],
+              "location": "AddNewMobile.receiveValidHttpResponseCodeOrAppropriateStatusCode(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Edge Cases Testing",
+    "description": "",
+    "id": "edge-cases-testing",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/edge_test_cases.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-10-27T17:48:56.396Z",
+        "line": 3,
+        "name": "Missing Required Fields",
+        "description": "",
+        "id": "validate-error-handling;missing-required-fields",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1126800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I set POST API endpoint",
+            "match": {
+              "location": "AddNewMobile.setPostApiEndpoint()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 523001400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I send a POST request with data \"year\": 2024, \"price\": 1849.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"year\"",
+                  "offset": 32
+                },
+                {
+                  "val": "2024",
+                  "offset": 40
+                },
+                {
+                  "val": "\"price\"",
+                  "offset": 46
+                },
+                {
+                  "val": "1849.99",
+                  "offset": 55
+                },
+                {
+                  "val": "\"CPU model\"",
+                  "offset": 64
+                },
+                {
+                  "val": "\"Intel Core i9\"",
+                  "offset": 77
+                },
+                {
+                  "val": "\"Hard disk size\"",
+                  "offset": 94
+                },
+                {
+                  "val": "\"1 TB\"",
+                  "offset": 112
+                }
+              ],
+              "location": "AddNewMobile.sendPostRequestWithData(String,Integer,String,Double,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 28987400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I receive HTTP response code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 29
+                }
+              ],
+              "location": "AddNewMobile.receiveHttpResponseCode(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-10-27T17:48:56.965Z",
+        "line": 8,
+        "name": "Invalid Data Type for Price",
+        "description": "",
+        "id": "validate-error-handling;invalid-data-type-for-price",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1833400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I set POST API endpoint",
+            "match": {
+              "location": "AddNewMobile.setPostApiEndpoint()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 471914800,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2024, \"price\": \"one thousand eight hundred forty-nine\", \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Apple MacBook Pro 16\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"year\"",
+                  "offset": 64
+                },
+                {
+                  "val": "2024",
+                  "offset": 72
+                },
+                {
+                  "val": "\"price\"",
+                  "offset": 78
+                },
+                {
+                  "val": "\"one thousand eight hundred forty-nine\"",
+                  "offset": 87
+                },
+                {
+                  "val": "\"CPU model\"",
+                  "offset": 128
+                },
+                {
+                  "val": "\"Intel Core i9\"",
+                  "offset": 141
+                },
+                {
+                  "val": "\"Hard disk size\"",
+                  "offset": 158
+                },
+                {
+                  "val": "\"1 TB\"",
+                  "offset": 176
+                }
+              ],
+              "location": "AddNewMobile.sendPostRequestWithInvalidDataType(String,String,Integer,String,String,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2676200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I receive HTTP response code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 29
+                }
+              ],
+              "location": "AddNewMobile.receiveHttpResponseCode(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Validate Error Handling",
+    "description": "",
+    "id": "validate-error-handling",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/negative_test_cases.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-10-27T17:48:57.451Z",
+        "line": 3,
+        "name": "Successfully add an Apple MacBook Pro 16 (2024)",
+        "description": "",
+        "id": "add-new-mobile-to-the-stock;successfully-add-an-apple-macbook-pro-16-(2024)",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1872000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I set POST API endpoint",
+            "match": {
+              "location": "AddNewMobile.setPostApiEndpoint()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2761377100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2024, \"price\": 1849.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Apple MacBook Pro 16\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"year\"",
+                  "offset": 64
+                },
+                {
+                  "val": "2024",
+                  "offset": 72
+                },
+                {
+                  "val": "\"price\"",
+                  "offset": 78
+                },
+                {
+                  "val": "1849.99",
+                  "offset": 87
+                },
+                {
+                  "val": "\"CPU model\"",
+                  "offset": 96
+                },
+                {
+                  "val": "\"Intel Core i9\"",
+                  "offset": 109
+                },
+                {
+                  "val": "\"Hard disk size\"",
+                  "offset": 126
+                },
+                {
+                  "val": "\"1 TB\"",
+                  "offset": 144
+                }
+              ],
+              "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1335200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I receive valid HTTP response code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 35
+                }
+              ],
+              "location": "AddNewMobile.receiveValidHttpResponse(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 533998700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the response body contains a unique id and a createdAt timestamp",
+            "match": {
+              "location": "AddNewMobile.responseBodyContainsUniqueIdAndCreatedAt()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-10-27T17:49:00.763Z",
+        "line": 9,
+        "name": "Successfully add an Apple MacBook Air 13 (2024)",
+        "description": "",
+        "id": "add-new-mobile-to-the-stock;successfully-add-an-apple-macbook-air-13-(2024)",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 806800,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I set POST API endpoint",
+            "match": {
+              "location": "AddNewMobile.setPostApiEndpoint()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 585670500,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I send a POST request with name \"Apple MacBook Air 13\" and data \"year\": 2024, \"price\": 1299.99, \"CPU model\": \"Intel Core i7\", \"Hard disk size\": \"512 GB\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Apple MacBook Air 13\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"year\"",
+                  "offset": 64
+                },
+                {
+                  "val": "2024",
+                  "offset": 72
+                },
+                {
+                  "val": "\"price\"",
+                  "offset": 78
+                },
+                {
+                  "val": "1299.99",
+                  "offset": 87
+                },
+                {
+                  "val": "\"CPU model\"",
+                  "offset": 96
+                },
+                {
+                  "val": "\"Intel Core i7\"",
+                  "offset": 109
+                },
+                {
+                  "val": "\"Hard disk size\"",
+                  "offset": 126
+                },
+                {
+                  "val": "\"512 GB\"",
+                  "offset": 144
+                }
+              ],
+              "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3130700,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I receive valid HTTP response code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 35
+                }
+              ],
+              "location": "AddNewMobile.receiveValidHttpResponse(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 39490500,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "the response body contains a unique id and a createdAt timestamp",
+            "match": {
+              "location": "AddNewMobile.responseBodyContainsUniqueIdAndCreatedAt()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Add New Mobile To The Stock",
+    "description": "",
+    "id": "add-new-mobile-to-the-stock",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/positive_test_cases.feature",
+    "tags": []
+  }
+]
