@@ -23,7 +23,12 @@ public class Hooks {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
+            test.fail("Test Failed");
+        } else {
+            test.pass("Test Passed");
+        }
         extent.flush();
     }
 }
