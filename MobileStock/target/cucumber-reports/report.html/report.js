@@ -1,11 +1,11 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/edge_test_cases.feature");
 formatter.feature({
-  "name": "Add new post to EmployeeDetails for Mobile Store Employee",
+  "name": "Mobile Store Employee",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Add new post with safe integer limit userId",
+  "name": "Employee with with safe integer limit userId",
   "description": "",
   "keyword": "Scenario"
 });
@@ -50,7 +50,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Add new post with non-safe integer limit userId",
+  "name": "Employee with with safe integer limit userId",
   "description": "",
   "keyword": "Scenario"
 });
@@ -101,7 +101,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Attempt to delete a reserved object ID",
+  "name": "Attempt to delete a reserved EmployeeID",
   "description": "",
   "keyword": "Scenario"
 });
@@ -146,7 +146,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Attempt to delete a non-existent object ID",
+  "name": "Attempt to delete a non-existent EmployeeID",
   "description": "",
   "keyword": "Scenario"
 });
@@ -242,7 +242,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Successfully add an Apple MacBook Air 13 (2024)",
+  "name": "Successfully add a Samsung Galaxy Z Fold 5",
   "description": "",
   "keyword": "Scenario"
 });
@@ -257,7 +257,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I send a POST request with name \"Apple MacBook Air 13\" and data \"year\": 2024, \"price\": 1299.99, \"CPU model\": \"Intel Core i7\", \"Hard disk size\": \"512 GB\"",
+  "name": "I send a POST request with name \"Samsung Galaxy Z Fold 5\" and data \"year\": 2024, \"price\": 1299.99, \"CPU model\": \"Intel Core i7\", \"Hard disk size\": \"512 GB\"",
   "keyword": "When "
 });
 formatter.match({
