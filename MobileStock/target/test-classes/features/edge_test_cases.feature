@@ -1,11 +1,13 @@
-Feature: Edge Cases Testing
+Feature: Add new post to EmployeeDetails for Mobile Store Employee
 
-  Scenario: Creating with a Future Year
-    Given I set POST API endpoint
-    When I send a POST request with name "Apple MacBook Pro 16" and data "year": 2030, "price": 1849.99, "CPU model": "Intel Core i9", "Hard disk size": "1 TB"
-    Then I receive valid HTTP response code 200 or an appropriate status code
+  Scenario: Add new post with safe integer limit userId
+    Given I set POST API endpoint for EmployeeDetails
+    When I send a POST request with title "Manager", body "Branch - MediaMartUtrecht", and safe userId 9007199254740991
+    Then I receive a valid HTTP response code 201
+    And the response body contains title "Manager", body "Branch - MediaMartUtrecht", and safe userId 9007199254740991
 
-  Scenario: Boundary Price Value
-    Given I set POST API endpoint
-    When I send a POST request with name "Apple MacBook Pro 16" and data "year": 2024, "price": 9999.99, "CPU model": "Intel Core i9", "Hard disk size": "1 TB"
-    Then I receive valid HTTP response code 200 or an appropriate status code
+  Scenario: Add new post with non-safe integer limit userId
+    Given I set POST API endpoint for EmployeeDetails
+    When I send a POST request with title "Manager", body "Branch - MediaMartUtrecht", and non-safe userId 9007199254740992
+    Then I receive a valid HTTP response code 201
+    And the response body contains title "Manager", body "Branch - MediaMartUtrecht", and non-safe userId in scientific notation "9007199254740992L"

@@ -1,11 +1,13 @@
-Feature: Validate Error Handling
+Feature: Delete Mobile
 
-  Scenario: Missing Required Fields
-    Given I set POST API endpoint
-    When I send a POST request with data "year": 2024, "price": 1849.99, "CPU model": "Intel Core i9", "Hard disk size": "1 TB"
-    Then I receive HTTP response code 200
+  Scenario: Attempt to delete a reserved object ID
+    Given a reserved object ID 6
+    When I send a DELETE request with reserved ID 6
+    Then I receive HTTP response code 405 for reserved ID
+    And the response should be an error message for reserved ID
 
-  Scenario: Invalid Data Type for Price
-    Given I set POST API endpoint
-    When I send a POST request with name "Apple MacBook Pro 16" and data "year": 2024, "price": "one thousand eight hundred forty-nine", "CPU model": "Intel Core i9", "Hard disk size": "1 TB"
-    Then I receive HTTP response code 200
+  Scenario: Attempt to delete a non-existent object ID
+    Given a non-existent object ID "ewer"
+    When I send a DELETE request with non-existent ID "ewer"
+    Then I receive HTTP response code 404 for non-existent ID
+    And the response should be an error message for non-existent ID

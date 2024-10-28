@@ -1,151 +1,191 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/edge_test_cases.feature");
 formatter.feature({
-  "name": "Edge Cases Testing",
+  "name": "Add new post to EmployeeDetails for Mobile Store Employee",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Creating with a Future Year",
+  "name": "Add new post with safe integer limit userId",
   "description": "",
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "I set POST API endpoint",
+  "name": "I set POST API endpoint for EmployeeDetails",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "AddNewMobile.setPostApiEndpoint()"
+  "location": "MobileStoreEmployee.setPostApiEndpoint()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2030, \"price\": 1849.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+  "name": "I send a POST request with title \"Manager\", body \"Branch - MediaMartUtrecht\", and safe userId 9007199254740991",
   "keyword": "When "
 });
 formatter.match({
-  "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+  "location": "MobileStoreEmployee.sendPostRequestWithSafeUserId(String,String,Long)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I receive valid HTTP response code 200 or an appropriate status code",
+  "name": "I receive a valid HTTP response code 201",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "AddNewMobile.receiveValidHttpResponseCodeOrAppropriateStatusCode(int)"
+  "location": "MobileStoreEmployee.receiveValidHttpResponseForMobileStoreEmployee(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the response body contains title \"Manager\", body \"Branch - MediaMartUtrecht\", and safe userId 9007199254740991",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "MobileStoreEmployee.responseBodyContainsSafeUserId(String,String,Long)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Boundary Price Value",
+  "name": "Add new post with non-safe integer limit userId",
   "description": "",
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "I set POST API endpoint",
+  "name": "I set POST API endpoint for EmployeeDetails",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "AddNewMobile.setPostApiEndpoint()"
+  "location": "MobileStoreEmployee.setPostApiEndpoint()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2024, \"price\": 9999.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+  "name": "I send a POST request with title \"Manager\", body \"Branch - MediaMartUtrecht\", and non-safe userId 9007199254740992",
   "keyword": "When "
 });
 formatter.match({
-  "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+  "location": "MobileStoreEmployee.sendPostRequestWithNonSafeUserId(String,String,Long)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I receive valid HTTP response code 200 or an appropriate status code",
+  "name": "I receive a valid HTTP response code 201",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "AddNewMobile.receiveValidHttpResponseCodeOrAppropriateStatusCode(int)"
+  "location": "MobileStoreEmployee.receiveValidHttpResponseForMobileStoreEmployee(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the response body contains title \"Manager\", body \"Branch - MediaMartUtrecht\", and non-safe userId in scientific notation \"9007199254740992L\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "MobileStoreEmployee.responseBodyContainsNonSafeUserIdInScientificNotation(String,String,String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.uri("file:src/test/resources/features/negative_test_cases.feature");
 formatter.feature({
-  "name": "Validate Error Handling",
+  "name": "Delete Mobile",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Missing Required Fields",
+  "name": "Attempt to delete a reserved object ID",
   "description": "",
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "I set POST API endpoint",
+  "name": "a reserved object ID 6",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "AddNewMobile.setPostApiEndpoint()"
+  "location": "DeleteMobile.aReservedObjectID(int)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I send a POST request with data \"year\": 2024, \"price\": 1849.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+  "name": "I send a DELETE request with reserved ID 6",
   "keyword": "When "
 });
 formatter.match({
-  "location": "AddNewMobile.sendPostRequestWithData(String,Integer,String,Double,String,String,String,String)"
+  "location": "DeleteMobile.iSendADeleteRequestWithReservedID(int)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I receive HTTP response code 200",
+  "name": "I receive HTTP response code 405 for reserved ID",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "AddNewMobile.receiveHttpResponseCode(int)"
+  "location": "DeleteMobile.iReceiveHttpResponseCodeForReservedID(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the response should be an error message for reserved ID",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "DeleteMobile.theResponseShouldBeAnErrorMessageForReservedID()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Invalid Data Type for Price",
+  "name": "Attempt to delete a non-existent object ID",
   "description": "",
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "I set POST API endpoint",
+  "name": "a non-existent object ID \"ewer\"",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "AddNewMobile.setPostApiEndpoint()"
+  "location": "DeleteMobile.aNonExistentObjectID(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2024, \"price\": \"one thousand eight hundred forty-nine\", \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+  "name": "I send a DELETE request with non-existent ID \"ewer\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "AddNewMobile.sendPostRequestWithInvalidDataType(String,String,Integer,String,String,String,String,String,String)"
+  "location": "DeleteMobile.iSendADeleteRequestWithNonExistentID(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I receive HTTP response code 200",
+  "name": "I receive HTTP response code 404 for non-existent ID",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "AddNewMobile.receiveHttpResponseCode(int)"
+  "location": "DeleteMobile.iReceiveHttpResponseCodeForNonExistentID(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the response should be an error message for non-existent ID",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "DeleteMobile.theResponseShouldBeAnErrorMessageForNonExistentID()"
 });
 formatter.result({
   "status": "passed"

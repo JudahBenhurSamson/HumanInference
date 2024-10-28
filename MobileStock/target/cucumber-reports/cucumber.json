@@ -3,191 +3,195 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-10-27T17:48:53.589Z",
+        "start_timestamp": "2024-10-28T11:03:59.886Z",
         "line": 3,
-        "name": "Creating with a Future Year",
+        "name": "Add new post with safe integer limit userId",
         "description": "",
-        "id": "edge-cases-testing;creating-with-a-future-year",
+        "id": "add-new-post-to-employeedetails-for-mobile-store-employee;add-new-post-with-safe-integer-limit-userid",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 526357900,
+              "duration": 685962700,
               "status": "passed"
             },
             "line": 4,
-            "name": "I set POST API endpoint",
+            "name": "I set POST API endpoint for EmployeeDetails",
             "match": {
-              "location": "AddNewMobile.setPostApiEndpoint()"
+              "location": "MobileStoreEmployee.setPostApiEndpoint()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1830553300,
+              "duration": 2071123100,
               "status": "passed"
             },
             "line": 5,
-            "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2030, \"price\": 1849.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "name": "I send a POST request with title \"Manager\", body \"Branch - MediaMartUtrecht\", and safe userId 9007199254740991",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Apple MacBook Pro 16\"",
-                  "offset": 32
+                  "val": "\"Manager\"",
+                  "offset": 33
                 },
                 {
-                  "val": "\"year\"",
-                  "offset": 64
+                  "val": "\"Branch - MediaMartUtrecht\"",
+                  "offset": 49
                 },
                 {
-                  "val": "2030",
-                  "offset": 72
-                },
-                {
-                  "val": "\"price\"",
-                  "offset": 78
-                },
-                {
-                  "val": "1849.99",
-                  "offset": 87
-                },
-                {
-                  "val": "\"CPU model\"",
-                  "offset": 96
-                },
-                {
-                  "val": "\"Intel Core i9\"",
-                  "offset": 109
-                },
-                {
-                  "val": "\"Hard disk size\"",
-                  "offset": 126
-                },
-                {
-                  "val": "\"1 TB\"",
-                  "offset": 144
+                  "val": "9007199254740991",
+                  "offset": 94
                 }
               ],
-              "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+              "location": "MobileStoreEmployee.sendPostRequestWithSafeUserId(String,String,Long)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 16688600,
+              "duration": 27024600,
               "status": "passed"
             },
             "line": 6,
-            "name": "I receive valid HTTP response code 200 or an appropriate status code",
+            "name": "I receive a valid HTTP response code 201",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
-                  "offset": 35
+                  "val": "201",
+                  "offset": 37
                 }
               ],
-              "location": "AddNewMobile.receiveValidHttpResponseCodeOrAppropriateStatusCode(int)"
+              "location": "MobileStoreEmployee.receiveValidHttpResponseForMobileStoreEmployee(int)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 764346700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the response body contains title \"Manager\", body \"Branch - MediaMartUtrecht\", and safe userId 9007199254740991",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Manager\"",
+                  "offset": 33
+                },
+                {
+                  "val": "\"Branch - MediaMartUtrecht\"",
+                  "offset": 49
+                },
+                {
+                  "val": "9007199254740991",
+                  "offset": 94
+                }
+              ],
+              "location": "MobileStoreEmployee.responseBodyContainsSafeUserId(String,String,Long)"
+            },
+            "keyword": "And "
           }
         ]
       },
       {
-        "start_timestamp": "2024-10-27T17:48:55.993Z",
-        "line": 8,
-        "name": "Boundary Price Value",
+        "start_timestamp": "2024-10-28T11:04:03.466Z",
+        "line": 9,
+        "name": "Add new post with non-safe integer limit userId",
         "description": "",
-        "id": "edge-cases-testing;boundary-price-value",
+        "id": "add-new-post-to-employeedetails-for-mobile-store-employee;add-new-post-with-non-safe-integer-limit-userid",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 687300,
+              "duration": 3015900,
               "status": "passed"
             },
-            "line": 9,
-            "name": "I set POST API endpoint",
+            "line": 10,
+            "name": "I set POST API endpoint for EmployeeDetails",
             "match": {
-              "location": "AddNewMobile.setPostApiEndpoint()"
+              "location": "MobileStoreEmployee.setPostApiEndpoint()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 391160700,
+              "duration": 383144600,
               "status": "passed"
             },
-            "line": 10,
-            "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2024, \"price\": 9999.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "line": 11,
+            "name": "I send a POST request with title \"Manager\", body \"Branch - MediaMartUtrecht\", and non-safe userId 9007199254740992",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Apple MacBook Pro 16\"",
-                  "offset": 32
+                  "val": "\"Manager\"",
+                  "offset": 33
                 },
                 {
-                  "val": "\"year\"",
-                  "offset": 64
+                  "val": "\"Branch - MediaMartUtrecht\"",
+                  "offset": 49
                 },
                 {
-                  "val": "2024",
-                  "offset": 72
-                },
-                {
-                  "val": "\"price\"",
-                  "offset": 78
-                },
-                {
-                  "val": "9999.99",
-                  "offset": 87
-                },
-                {
-                  "val": "\"CPU model\"",
-                  "offset": 96
-                },
-                {
-                  "val": "\"Intel Core i9\"",
-                  "offset": 109
-                },
-                {
-                  "val": "\"Hard disk size\"",
-                  "offset": 126
-                },
-                {
-                  "val": "\"1 TB\"",
-                  "offset": 144
+                  "val": "9007199254740992",
+                  "offset": 98
                 }
               ],
-              "location": "AddNewMobile.sendPostRequest(String,String,Integer,String,Double,String,String,String,String)"
+              "location": "MobileStoreEmployee.sendPostRequestWithNonSafeUserId(String,String,Long)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 3804800,
+              "duration": 1217100,
               "status": "passed"
             },
-            "line": 11,
-            "name": "I receive valid HTTP response code 200 or an appropriate status code",
+            "line": 12,
+            "name": "I receive a valid HTTP response code 201",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
-                  "offset": 35
+                  "val": "201",
+                  "offset": 37
                 }
               ],
-              "location": "AddNewMobile.receiveValidHttpResponseCodeOrAppropriateStatusCode(int)"
+              "location": "MobileStoreEmployee.receiveValidHttpResponseForMobileStoreEmployee(int)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 45525600,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "the response body contains title \"Manager\", body \"Branch - MediaMartUtrecht\", and non-safe userId in scientific notation \"9007199254740992L\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Manager\"",
+                  "offset": 33
+                },
+                {
+                  "val": "\"Branch - MediaMartUtrecht\"",
+                  "offset": 49
+                },
+                {
+                  "val": "\"9007199254740992L\"",
+                  "offset": 121
+                }
+              ],
+              "location": "MobileStoreEmployee.responseBodyContainsNonSafeUserIdInScientificNotation(String,String,String)"
+            },
+            "keyword": "And "
           }
         ]
       }
     ],
-    "name": "Edge Cases Testing",
+    "name": "Add new post to EmployeeDetails for Mobile Store Employee",
     "description": "",
-    "id": "edge-cases-testing",
+    "id": "add-new-post-to-employeedetails-for-mobile-store-employee",
     "keyword": "Feature",
     "uri": "file:src/test/resources/features/edge_test_cases.feature",
     "tags": []
@@ -196,187 +200,163 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-10-27T17:48:56.396Z",
+        "start_timestamp": "2024-10-28T11:04:03.909Z",
         "line": 3,
-        "name": "Missing Required Fields",
+        "name": "Attempt to delete a reserved object ID",
         "description": "",
-        "id": "validate-error-handling;missing-required-fields",
+        "id": "delete-mobile;attempt-to-delete-a-reserved-object-id",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1126800,
+              "duration": 761000,
               "status": "passed"
             },
             "line": 4,
-            "name": "I set POST API endpoint",
+            "name": "a reserved object ID 6",
             "match": {
-              "location": "AddNewMobile.setPostApiEndpoint()"
+              "arguments": [
+                {
+                  "val": "6",
+                  "offset": 21
+                }
+              ],
+              "location": "DeleteMobile.aReservedObjectID(int)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 523001400,
+              "duration": 335543800,
               "status": "passed"
             },
             "line": 5,
-            "name": "I send a POST request with data \"year\": 2024, \"price\": 1849.99, \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "name": "I send a DELETE request with reserved ID 6",
             "match": {
               "arguments": [
                 {
-                  "val": "\"year\"",
-                  "offset": 32
-                },
-                {
-                  "val": "2024",
-                  "offset": 40
-                },
-                {
-                  "val": "\"price\"",
-                  "offset": 46
-                },
-                {
-                  "val": "1849.99",
-                  "offset": 55
-                },
-                {
-                  "val": "\"CPU model\"",
-                  "offset": 64
-                },
-                {
-                  "val": "\"Intel Core i9\"",
-                  "offset": 77
-                },
-                {
-                  "val": "\"Hard disk size\"",
-                  "offset": 94
-                },
-                {
-                  "val": "\"1 TB\"",
-                  "offset": 112
+                  "val": "6",
+                  "offset": 41
                 }
               ],
-              "location": "AddNewMobile.sendPostRequestWithData(String,Integer,String,Double,String,String,String,String)"
+              "location": "DeleteMobile.iSendADeleteRequestWithReservedID(int)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 28987400,
+              "duration": 3386700,
               "status": "passed"
             },
             "line": 6,
-            "name": "I receive HTTP response code 200",
+            "name": "I receive HTTP response code 405 for reserved ID",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
+                  "val": "405",
                   "offset": 29
                 }
               ],
-              "location": "AddNewMobile.receiveHttpResponseCode(int)"
+              "location": "DeleteMobile.iReceiveHttpResponseCodeForReservedID(int)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 39352800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "the response should be an error message for reserved ID",
+            "match": {
+              "location": "DeleteMobile.theResponseShouldBeAnErrorMessageForReservedID()"
+            },
+            "keyword": "And "
           }
         ]
       },
       {
-        "start_timestamp": "2024-10-27T17:48:56.965Z",
-        "line": 8,
-        "name": "Invalid Data Type for Price",
+        "start_timestamp": "2024-10-28T11:04:04.320Z",
+        "line": 9,
+        "name": "Attempt to delete a non-existent object ID",
         "description": "",
-        "id": "validate-error-handling;invalid-data-type-for-price",
+        "id": "delete-mobile;attempt-to-delete-a-non-existent-object-id",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1833400,
+              "duration": 973000,
               "status": "passed"
             },
-            "line": 9,
-            "name": "I set POST API endpoint",
+            "line": 10,
+            "name": "a non-existent object ID \"ewer\"",
             "match": {
-              "location": "AddNewMobile.setPostApiEndpoint()"
+              "arguments": [
+                {
+                  "val": "\"ewer\"",
+                  "offset": 25
+                }
+              ],
+              "location": "DeleteMobile.aNonExistentObjectID(String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 471914800,
+              "duration": 329181300,
               "status": "passed"
             },
-            "line": 10,
-            "name": "I send a POST request with name \"Apple MacBook Pro 16\" and data \"year\": 2024, \"price\": \"one thousand eight hundred forty-nine\", \"CPU model\": \"Intel Core i9\", \"Hard disk size\": \"1 TB\"",
+            "line": 11,
+            "name": "I send a DELETE request with non-existent ID \"ewer\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Apple MacBook Pro 16\"",
-                  "offset": 32
-                },
-                {
-                  "val": "\"year\"",
-                  "offset": 64
-                },
-                {
-                  "val": "2024",
-                  "offset": 72
-                },
-                {
-                  "val": "\"price\"",
-                  "offset": 78
-                },
-                {
-                  "val": "\"one thousand eight hundred forty-nine\"",
-                  "offset": 87
-                },
-                {
-                  "val": "\"CPU model\"",
-                  "offset": 128
-                },
-                {
-                  "val": "\"Intel Core i9\"",
-                  "offset": 141
-                },
-                {
-                  "val": "\"Hard disk size\"",
-                  "offset": 158
-                },
-                {
-                  "val": "\"1 TB\"",
-                  "offset": 176
+                  "val": "\"ewer\"",
+                  "offset": 45
                 }
               ],
-              "location": "AddNewMobile.sendPostRequestWithInvalidDataType(String,String,Integer,String,String,String,String,String,String)"
+              "location": "DeleteMobile.iSendADeleteRequestWithNonExistentID(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2676200,
+              "duration": 1283700,
               "status": "passed"
             },
-            "line": 11,
-            "name": "I receive HTTP response code 200",
+            "line": 12,
+            "name": "I receive HTTP response code 404 for non-existent ID",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
+                  "val": "404",
                   "offset": 29
                 }
               ],
-              "location": "AddNewMobile.receiveHttpResponseCode(int)"
+              "location": "DeleteMobile.iReceiveHttpResponseCodeForNonExistentID(int)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11288500,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "the response should be an error message for non-existent ID",
+            "match": {
+              "location": "DeleteMobile.theResponseShouldBeAnErrorMessageForNonExistentID()"
+            },
+            "keyword": "And "
           }
         ]
       }
     ],
-    "name": "Validate Error Handling",
+    "name": "Delete Mobile",
     "description": "",
-    "id": "validate-error-handling",
+    "id": "delete-mobile",
     "keyword": "Feature",
     "uri": "file:src/test/resources/features/negative_test_cases.feature",
     "tags": []
@@ -385,7 +365,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2024-10-27T17:48:57.451Z",
+        "start_timestamp": "2024-10-28T11:04:04.674Z",
         "line": 3,
         "name": "Successfully add an Apple MacBook Pro 16 (2024)",
         "description": "",
@@ -395,7 +375,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1872000,
+              "duration": 637500,
               "status": "passed"
             },
             "line": 4,
@@ -407,7 +387,7 @@
           },
           {
             "result": {
-              "duration": 2761377100,
+              "duration": 311988100,
               "status": "passed"
             },
             "line": 5,
@@ -457,7 +437,7 @@
           },
           {
             "result": {
-              "duration": 1335200,
+              "duration": 788300,
               "status": "passed"
             },
             "line": 6,
@@ -475,7 +455,7 @@
           },
           {
             "result": {
-              "duration": 533998700,
+              "duration": 21770400,
               "status": "passed"
             },
             "line": 7,
@@ -488,7 +468,7 @@
         ]
       },
       {
-        "start_timestamp": "2024-10-27T17:49:00.763Z",
+        "start_timestamp": "2024-10-28T11:04:05.015Z",
         "line": 9,
         "name": "Successfully add an Apple MacBook Air 13 (2024)",
         "description": "",
@@ -498,7 +478,7 @@
         "steps": [
           {
             "result": {
-              "duration": 806800,
+              "duration": 914200,
               "status": "passed"
             },
             "line": 10,
@@ -510,7 +490,7 @@
           },
           {
             "result": {
-              "duration": 585670500,
+              "duration": 309644600,
               "status": "passed"
             },
             "line": 11,
@@ -560,7 +540,7 @@
           },
           {
             "result": {
-              "duration": 3130700,
+              "duration": 828500,
               "status": "passed"
             },
             "line": 12,
@@ -578,7 +558,7 @@
           },
           {
             "result": {
-              "duration": 39490500,
+              "duration": 17920900,
               "status": "passed"
             },
             "line": 13,

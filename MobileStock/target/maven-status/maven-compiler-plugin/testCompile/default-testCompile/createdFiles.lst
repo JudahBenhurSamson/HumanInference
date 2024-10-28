@@ -1,2 +1,4 @@
+steps\MobileStoreEmployee.class
+steps\DeleteMobile.class
 steps\AddNewMobile.class
 steps\TestRunner.class
